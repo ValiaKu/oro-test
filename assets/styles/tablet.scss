@@ -1,0 +1,122 @@
+@import 'variables.scss';
+
+header .container {
+    position: relative;
+
+    .user-box {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 12px;
+    
+        a {
+            font-size: 1.6rem;
+            padding-left: 21px;
+            background-image: url(../images/icons-set.svg);
+            background-position: 3px -2px;
+            background-repeat: no-repeat;
+            text-decoration: none;
+            line-height: 1rem;
+            display: inline-block;
+            margin-right: 24px;
+    
+            &:hover {
+                color: $text-main-color;
+                opacity: 0.5;
+            }
+    
+            span {
+                display: inline-block;
+                height: 10px;
+                width: 10px;
+                background-image: url(../images/icons-set.svg);
+                background-position: 0px -13px;
+                background-repeat: no-repeat;
+                left: 5px;
+                position: relative;
+            }
+    
+            + a {
+                font-size: 1.4rem;
+                background-position: 0 -25px;
+                font-weight: 400;
+                font-family: $font-common;
+            }
+        }
+
+        @media (min-width: $tablet-width-max) {
+            top: 19px;
+            right: 116px;
+        }
+
+    }
+    
+}
+
+
+.login-box {
+    padding: 60px 0;
+    h1, form {
+        width: 60%;
+    }
+}
+
+@media (max-width: $desktop-width) {
+    main .container {
+        padding-left: $gap-grid * 4;
+        padding-right: $gap-grid * 4;
+    }
+
+    .join-box,
+    .team-box {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .join-box {
+        text-align: center;
+
+        a {
+            width: fit-content;
+            padding-right: 85px;
+            padding-left: 85px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .team-box {
+        padding-bottom: 50px;
+        p {
+            padding-bottom: 0;
+        }
+        .founders  {
+            flex-direction: row;
+            display: flex;
+            gap: $gap-grid * 4;
+        }
+        p {
+            padding-right: $gap-grid * 4;
+        }
+    } 
+
+    footer .container {
+        flex-direction: row;
+        display: flex;
+        gap:  $gap-grid * 4;
+        justify-content: space-between;
+        padding-left:  $gap-grid * 4;
+
+        .socials-box {
+            border-bottom: 0 none;
+        }
+        address  {
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+            align-items: flex-start;
+            span {
+                position: static;
+                margin-top: 10px;
+            }
+        }
+    }
+}

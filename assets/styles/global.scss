@@ -1,0 +1,374 @@
+@import 'variables.scss';
+@import 'menu.scss';
+
+// Declare shared styles in extends
+
+%button-animation {
+    transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+
+
+// General styles
+
+html {
+   font-size: 62.5%;
+   
+}
+
+body {
+  font: 1.6rem/150% $font-common;
+  background-color: $base-lightest-gray-color;
+  color: $text-main-color;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+
+main > section {
+    padding: $gap-vertical $gap-horizontal;
+}
+
+/*********** Action elements ************/
+
+button, 
+main a[role="button"], 
+input[type="submit"],
+button:not(.icon-btn) {
+    font-family: $font-button;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 120%;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: $base-black;
+    display: block;
+    padding: 14px;
+    cursor: pointer;
+    text-align: center;
+    border: 0 none;
+    @extend %button-animation;
+
+    &:hover,
+    &:focus,
+    &:hover:focus {
+        background-color: $primary-color;
+        color: $base-black;
+    }
+    &:visited {
+        color: #fff;
+    }
+}
+
+a {
+    color: $text-main-color;
+    font-family: $font-link;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 120%;
+    @extend %button-animation;
+
+    &:visited {
+        color: $text-main-color;
+    }
+    &:hover,
+    &:focus,
+    &:hover:focus {
+        color: $primary-color;
+        
+    }
+}
+
+header {
+    background-color: $base-white;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+    
+
+    .container {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .logo {
+        display: block;
+        img {
+            margin-left: 24px;
+            display: block;
+        }
+    }
+
+    .user-box {
+        display: none;
+    }
+    
+}
+
+footer {
+    background-color: $base-black;
+    padding: $gap-vertical $gap-horizontal;
+
+    h3 {
+        color:$base-lightest-gray-color;
+        font-family: $font-header;
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+
+    .socials-box {
+        border-bottom: solid 1px rgba(234, 236, 238, 0.2);
+        padding-bottom: 68px;
+
+        a {
+            margin-right: $gap-grid * 2;
+            
+            &:hover {
+                svg path {
+                    stroke: $primary-color;
+                    stroke: $primary-color;
+                }
+            }
+        }
+    }
+    
+    a, span {
+        color: $base-dark-gray-color;
+        font-size: 1.2rem;
+        line-height: 130%;
+        text-decoration: none;
+        font-style: normal;
+        font-family: $font-common;
+        font-weight: 400;
+
+        &:visited {
+            color: $base-dark-gray-color;
+            
+        }
+        &:hover,
+        &:focus,
+        &:hover:focus {
+            color: $primary-color;
+            
+        }
+    }
+
+    span {
+        &:hover,
+        &:focus,
+        &:hover:focus {
+            color: $base-dark-gray-color;
+        } 
+    }
+
+    address {
+        padding-top: 10px;
+        a {
+            display: block;
+            padding: 10px 0;
+        }
+    }
+}
+
+main {
+    align-self: start;
+    flex-grow: 1;
+}
+
+h1, h2 {
+    font-family: $font-header;
+    line-height: 120%;
+    margin: 0;
+    padding: 0;
+} 
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 4.5rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 130%;
+}
+
+
+/*********** Form ************/
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $gap-grid * 4;
+    position: relative;
+
+    label {
+        margin-bottom: $gap-grid * 2;
+        display: block;
+    }
+
+    input:not([type="submit"]) {
+        border: none;
+        border-bottom: solid 1px $border-color;
+        background-color: transparent;
+        padding: 0px 18px 5px 0px;
+        font-size: 1.6rem;
+        font-family: $font-header;
+
+        // Add  Level AA ( WCAG 2) alignments
+        
+        &:focus {
+            border: none;
+            border-bottom: solid 1px $primary-color;
+            outline: none;    
+            background-color: $primary-color;   
+        }
+    }
+
+    .error-message {
+        color: #B33F27;
+        font-style: italic;
+        font-size: 1.2rem;
+        line-height: 1;
+        position: absolute;
+        top: 68px;
+        display: none;
+    }    
+
+    input:invalid:focus + .error-message {
+        display: block;
+    }
+}
+
+/*********** Login section  ************/
+
+.login-box {
+    h1 {
+        margin: 1px 0 40px;
+    }
+    a {
+        background-image: url(../images/button-arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center right;
+        padding-right: 32px;
+        font-family: $font-button;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 120%;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-top: 2px;
+        display: block;
+        width: fit-content;
+
+        &:hover {
+            color: $text-main-color;
+        }
+    }
+}
+
+/*********** Join section  ************/
+
+.join-box {
+    background-color:  $primary-color;
+    p {
+        color: $base-darkest-gray-color;
+        font-size: 1.6rem;
+        line-height: 150%;
+        margin-bottom: $gap-grid * 4;
+    }
+
+    a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+/*********** Team section  ************/
+
+.team-box {
+    padding: 46px $gap-grid * 4 0;
+    p {
+        color: $base-darkest-gray-color;
+        font-size: 1.8rem;
+        line-height: 160%;
+        letter-spacing: 0.9px;
+        padding: 0 0 87px 0;
+        margin: 0;
+    }
+    .one-founder {
+        margin-bottom: $gap-grid * 4;
+        display: flex;
+        flex-direction: column;
+
+        &:last-child {
+            margin-bottom: $gap-grid * 2;
+        }
+
+        p {
+            font-size: 1.4rem;
+            line-height: 140%; 
+        }
+
+        > * {
+            margin: 0 0 8px 0;
+            padding: 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: $tablet-width-min) {
+ 
+    nav {
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+    header .logo img {
+      margin-top: 1px;
+    }
+    .join-box {
+      padding: 34px 27px 58px 28px;
+  
+      h2 {
+        line-height: 110%;
+        margin-left: 4px;
+        letter-spacing: -0.1rem;
+      }
+  
+      p {
+        margin-top: 6px;
+        margin-left: 5px;
+        margin-bottom: 48px;
+      }
+      a {
+            padding-top: 15px;
+            padding-bottom: 14px;
+            margin-left: 1px;
+      }
+    }
+
+    .team-box {
+        padding-top: 48px;
+        p {
+            padding-bottom: 54px;
+        }
+        .one-founder {
+            margin-bottom: 0;
+        }
+    }
+  }
+  

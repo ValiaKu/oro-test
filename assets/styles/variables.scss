@@ -1,0 +1,27 @@
+// Declare variables 
+
+$font-common: Roboto, sans-serif;
+$font-header: 'Space Grotesk', sans-serif;
+$font-button:  $font-header;
+$font-link:  $font-header;
+
+$primary-color: #F7BB33;
+$base-light-gray-color: #EAECEE;
+$base-lightest-gray-color: #F7F9F9;
+$base-dark-gray-color: #9DA4A7;
+$base-darkest-gray-color: #535356;
+$base-black: #352E31;
+$base-white: #FFF;
+
+$text-main-color: $base-black;
+$border-color: $base-black;
+$devider-color: $base-light-gray-color;
+
+$gap-grid: 8px;
+$gap-horizontal: 30px;
+$gap-vertical: 40px;
+
+$desktop-width: 1280px;
+$desktop-lg-width: 1440px;
+$tablet-width-min: 768px;
+$tablet-width-max: 1024px;
