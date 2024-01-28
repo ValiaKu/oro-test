@@ -2,13 +2,13 @@
 
 ## Queries to Design team / Client
 1. Missing information for states of elements 
- - hover, visited links; 
- - focus form elements; 
- - focus, hover buttons; 
+ - hover/visited links
+ - focus form elements
+ - focus/hover buttons
  
-2. For some  dynamic states I need more colors - success, warning, error colors
+2. For some  dynamic states I need more colors - success, warning, error
 
-3. Is it required to have the third photo of founder in different size? Probably not, but I made exact like in Design to fit Pixel-Perfect compliance
+3. Is it required to have the third photo of founder in different size? Probably not, but I made exactly like in Design to fit Pixel-Perfect compliance
 
 ## Solution notes:
 
