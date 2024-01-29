@@ -307,6 +307,7 @@ h3 {
   padding: 0px 18px 5px 0px;
   font-size: 1.6rem;
   font-family: "Space Grotesk", sans-serif;
+  border-radius: 0;
 }
 .form-control input:not([type=submit]):focus {
   border: none;
